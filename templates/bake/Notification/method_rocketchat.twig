@@ -1,0 +1,17 @@
+    /**
+     * Get the RocketChat representation of the notification
+     *
+     * @param \Cake\Datasource\EntityInterface|\Cake\Notification\AnonymousNotifiable $notifiable The entity receiving the notification
+     * @return \Cake\Notification\RocketChat\Message\RocketChatMessage
+     */
+    public function toRocketchat(EntityInterface|AnonymousNotifiable $notifiable): RocketChatMessage
+    {
+        return RocketChatMessage::create()
+            ->text('{{ notificationName }}')
+            ->emoji(':bell:')
+            ->attachment(function (RocketChatAttachment $attachment) {
+                $attachment->title('{{ notificationName }}')
+                    ->text('You have a new notification')
+                    ->color('good');
+            });
+    }
