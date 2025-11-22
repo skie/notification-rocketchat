@@ -11,7 +11,7 @@ use Cake\RocketChatNotification\Provider\RocketChatChannelProvider;
 /**
  * RocketChat Plugin for Notification
  */
-class RocketChatNotification extends BasePlugin
+class RocketChatNotificationPlugin extends BasePlugin
 {
     /**
      * Load all the plugin configuration and bootstrap logic.
